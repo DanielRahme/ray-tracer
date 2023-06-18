@@ -4,7 +4,11 @@ A software ray-tracer following the [Ray Tracing in a weekend tutorial]{https://
 
 ##  Tracers Available
 
-* Ray Tracer using CPU (WIP)
+* Software Ray Tracer (WIP)
 * Vulkan Ray Tracer (TODO)
 
 ## Build and Run
+
+    cmake -S . -B build
+    cmake --build build
+    ./build/src/hello
