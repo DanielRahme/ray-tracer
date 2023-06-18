@@ -1,5 +1,5 @@
 # Add the executable target
-set(TargetName hello)
+set(TargetName raytracer)
 
 add_executable(${TargetName} main.cpp)
 
@@ -14,7 +14,7 @@ target_compile_options(${TargetName}
 PRIVATE
     -O3
     -Werror
-    -Wall
+    #-Wall
     -Wextra
     -Wpedantic
     -fdata-sections

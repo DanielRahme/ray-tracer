@@ -5,14 +5,26 @@
  * @brief A hello world program.
  */
 
-#include <functions.hpp>
 #include <iostream>
+#include <vec3.hpp>
+#include <color.hpp>
 
-int main() {
-  func::print_hello("World");
+void print_image() {
+  // Image
+  constexpr int image_width = 256;
+  constexpr int image_height = 256;
 
-  constexpr auto f = [] { std::cout << "Just a lambda\n"; };
-  f();
+  // Render
+  std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
-  std::cout << "Square of 3 == " << func::square(3) << '\n';
+  for (int j = image_height - 1; j >= 0; --j) {
+    for (int i = 0; i < image_width; ++i) {
+      std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;
+            color pixel_color(double(i)/(image_width-1), double(j)/(image_height-1), 0.25);
+            write_color(std::cout, pixel_color);
+    }
+  }
+  std::cerr << "\nDone.\n";
 }
+
+int main() { print_image(); }
