@@ -11,4 +11,5 @@ A software ray-tracer following the [Ray Tracing in a weekend tutorial]{https://
 
     cmake -S . -B build
     cmake --build build
-    ./build/src/hello
+    ./build/src/raytracer > img.ppm
+
